@@ -1,0 +1,19 @@
+---
+title: "June-13-quarto"
+author: "Aanya Shah"
+format: html
+execute: 
+  echo: false
+  warning: false
+---
+
+```{r}
+#| message: false
+#| label: setup
+library(tidyverse)
+```
+
+```{r}
+x <- read.csv("data/")
+```
+
