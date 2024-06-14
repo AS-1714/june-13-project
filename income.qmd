@@ -1,6 +1,4 @@
 ---
-title: "June-13-quarto"
-author: "Aanya Shah"
 format: html
 execute: 
   echo: false
@@ -14,6 +12,18 @@ library(tidyverse)
 ```
 
 ```{r}
-x <- read.csv(file = "data/mass-tracts.csv")
+x <- read_csv("mass-tracts.csv", show_col_types = FALSE)
+```
+
+```{r}
+x |>
+  ggplot(aes(x = med_income, color = race, fill = race)) + 
+  geom_density(alpha = 0.5, adjust = 2) + scale_y_continuous(labels = scales::comma) + scale_x_continuous(labels = scales::dollar) +
+  labs(title = "Median Income for Massachusetts Census Tracts",
+       subtitle = "The richest tracts are White",
+       x = "Median Income",
+       fill = "Race")
+  
+  
 ```
 
